@@ -1,10 +1,5 @@
-node-mongoq
-===========
+## Description
 
-Promise-enhancements to mongodb driver for Node.js
-
-This package provides a module that wraps mongodb driver
-functions in Q-based promise functions.
-
-
+This package produces a Node.js module that enhances
+the mongodb driver functions with promises.
 

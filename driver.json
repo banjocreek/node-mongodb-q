@@ -1,0 +1,31 @@
+{
+    "opNames": [
+        "insert",
+        "remove",
+        "rename",
+        "save",
+        "update",
+        "distinct",
+        "count",
+        "drop",
+        "findAndModify",
+        "findAndRemove",
+        "find",
+        "findOne",
+        "createIndex",
+        "ensureIndex",
+        "indexInformation",
+        "dropIndex",
+        "reindex",
+        "mapReduce",
+        "group",
+        "options",
+        "isCapped",
+        "indexExists",
+        "geoNear",
+        "geoHaystackSearch",
+        "indexes",
+        "aggregate",
+        "stats"
+    ]
+}
