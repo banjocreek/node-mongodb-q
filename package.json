@@ -1,7 +1,7 @@
 {
-  "name": "mongoq",
+  "name": "mongodb-q",
   "version": "0.0.2",
-  "description": "Promise integrations for mongodb driver.",
+  "description": "Q promise integration for mongodb driver.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,12 @@
     "nosql"
   ],
   "author": "Greg Wiley <aztec.rex@jammm.com>",
-  "license": "Apache License 2.0",
+  "licenses": [
+      {
+          "type": "Apache License, Version 2.0",
+          "url" : "http://www.apache.org/licenses/LICENSE-2.0"
+      }
+  ],
   "dependencies": {
     "q": "~0.9.7",
     "mongodb": "~1.3.22",
