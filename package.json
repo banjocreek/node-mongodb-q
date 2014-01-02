@@ -1,6 +1,6 @@
 {
   "name": "mongodb-q",
-  "version": "0.0.3",
+  "version": "0.0-snap",
   "description": "Q promise integration for mongodb driver.",
   "main": "index.js",
   "scripts": {
