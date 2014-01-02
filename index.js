@@ -60,7 +60,8 @@ function findOp(pobj, name) {
  */
 function wrapColl(pcoll) {
 
-    var ops     = {};
+    var ops     = {},
+        wrapper;
 
     config.opNames.forEach(function (name) {
         if (name === "find") {
@@ -95,7 +96,8 @@ function wrapColl(pcoll) {
         return d.promise;
     }
 
-    return {
+    
+    wrapper =  {
         insert: ops.insert,
         insertWith: function (options) {
             return function (docs) {
@@ -124,11 +126,32 @@ function wrapColl(pcoll) {
         findAndRemove: ops.findAndRemove,
         ensureIndex: ops.ensureIndex,
         findOne: ops.findOne,
+
         /*
          * unsafe is just all the operations we haven't reviewed or spun our own way.
          */
         unsafe: ops
     };
+
+    wrapper.index = function (spec, options) {
+
+        pcoll = pcoll.then(function (coll) {
+            var d = q.defer();
+
+            coll.ensureIndex(spec, options, function(err) {
+                if (err) {
+                    d.reject(err);
+                } else {
+                    d.resolve(coll);
+                }
+            });
+            return d.promise;
+        });
+        return wrapper;
+    };
+    
+    return wrapper;
+    
 }
 
 /**
